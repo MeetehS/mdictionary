@@ -1,22 +1,33 @@
 {
-  "name": "electron-quick-start",
+  "name": "MDictionary",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "A pure English-Chinese dictionary",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "postinstall": "install-app-deps",
+    "start": "electron .",
+    "pack": "build --dir",
+    "dist": "build"
   },
-  "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
     "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "English",
+    "Chinese",
+    "Dictionary"
   ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "author": "jelly",
   "devDependencies": {
-    "electron": "^1.4.1"
+    "electron": "^1.6.1",
+    "electron-builder": "^14.5.3"
+  },
+  "dependencies": {
+    "cheerio": "^0.22.0"
+  },
+  "build": {
+    "appId": "com.meetehs.mdictionary",
+    "deb": {
+      "synopsis": "A pure English-Chinese dictionary",
+      "priority": "standard"
+    }
   }
 }

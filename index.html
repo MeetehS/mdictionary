@@ -2,14 +2,59 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>MDictionary</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      #input-word {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 20px 15px;
+        border: none;
+        font-size: 18px;
+        color: white;
+        background-color: #669df4;
+      }
+
+      #input-word::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+        color: rgba(255, 255, 255, .5);
+      }
+
+      #input-word::placeholder {
+        color: rgba(255, 255, 255, .5);
+      }
+
+      #input-word:focus {
+        outline: 0;
+      }
+
+      #result {
+        margin-top: 61px;
+        padding: 15px;
+      }
+
+      #result > ul {
+        list-style: none;
+        line-height: 1.5;
+      }
+
+      .about {
+        width: 100%;
+        margin-bottom: 15px;
+        padding: 15px;
+        background-color: yellow;
+      }
+    </style>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+    <input id="input-word" placeholder="输入你想查询的单词" autofocus />
+
+    <div id="result"></div>
   </body>
 
   <script>
